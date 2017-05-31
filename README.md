@@ -5,6 +5,7 @@
 Site web permettant de créer et de modifier des personnages d'un univers de Jeu De Role avec certains paramètres prédéfinis. On pourra ensuite lire les fiches persos, d'un personnage ou bien d'un groupe, sous forme de livre
 
 ![image](https://img15.hostingpics.net/pics/209805ChristineZora.png)
+![image](https://img15.hostingpics.net/pics/230026Arborescence.png)
 
 ## Utilisation
 
