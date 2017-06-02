@@ -4,6 +4,12 @@
 }
 body{
 	font-family: 'Gabriola', sans-serif;
+	margin: 0px;
+	padding: 0px;
+}
+div{
+	width: 49.9%;
+	display: inline-block;
 }
 label{
 	text-align: center;
@@ -18,4 +24,7 @@ input{
 }
 .block{
 	display: block;
+}
+#imageperso{
+	display: none;
 }
