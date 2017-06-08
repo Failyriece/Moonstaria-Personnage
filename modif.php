@@ -6,9 +6,8 @@ if ($_POST['Fini'] == 'false') {
 }else{
 	$sql = "UPDATE personnage  SET Écaille = '$Ecaille', Compétences = '$Compétences', Inventaire = '$Inventaire' WHERE Appelation = '$Joueur'";
 }
-	mysqli_query($link,$sql);
-
-if ($_FILES['imageperso']['name'] != '') {
+mysqli_query($link,$sql);
+if ($_FILES['imageperso']['name'] != '' && $VerifImg == 'false') {
 	$image = $_FILES['imageperso']['tmp_name'];
 	list($w_ori,$h_ori) = getimagesize($image);
 	$image2 = imagecreatefromjpeg($image);
@@ -16,6 +15,5 @@ if ($_FILES['imageperso']['name'] != '') {
 	imagecopyresampled($imagefinal, $image2, 0, 0, 0, 0, 400, 400, $w_ori, $h_ori);
 	imagejpeg($imagefinal, "img/Avatar/".$Joueur.".jpg");
 }
-
 	header('location: index.php');
 ?>

@@ -7,12 +7,15 @@ $verif2 = mysqli_query($link,$verif);
 $data = mysqli_fetch_assoc($verif2);
 $totauxCaract = $data['Physique'] + $data['Capacités'] + $data['Mental'] + $data['Social'];
 
-echo "<form action='modif.php' method='post' accept-charset='utf-8'>";
+echo "<form action='modif.php' method='post' accept-charset='utf-8' enctype='multipart/form-data'>";
 
 if (!file_exists('img/Avatar/'.$Joueur.'.jpg')) {
-	echo "<input type='file' name='imageperso' value='' id='imageperso' onChange='getvalue();' accept='.jpg'/>
+	echo "<input type='hidden' name='VerifImg' value='false'>
+	<input type='file' name='imageperso' value='' id='imageperso' onChange='getvalue();' accept='.jpg'/>
 			<input type='button' value='Choisir une image' onclick='getfile()'' />
 			<label for='PersoImage' id='PersoImage'>Aucun image choisie</label>";
+}else{
+	echo "<input type='hidden' name='VerifImg' value='true'>";
 }
 echo "<input type='hidden' name='Joueur' value='$Joueur'>
 	<select name='Ecaille' id='Ecaille'>
@@ -24,16 +27,16 @@ echo "<input type='hidden' name='Joueur' value='$Joueur'>
 		<option value='Orange'>Orange</option>
 		<option value='Rouge'>Rouge</option>
 		<option value='Blanche'>Blanche</option>
-	</select>";
-if ($data['Race'] == '' || $data['Classe'] == '' || $data['Capacité'] == '' || $data['Invocation'] == '' || $data['Origine'] == '' || $totauxCaract != 45) {
+	</select>
+	<input type='text' name='Classe' id='Classe' placeholder='Classe' value='".$data['Classe']."'>";
+if ($data['Race'] == '' || $data['Capacité'] == '' || $data['Invocation'] == '' || $data['Origine'] == '' || $totauxCaract != 45) {
 	echo "<input type='hidden' name='Fini' value='false'>
 	<input type='text' name='Race' id='Race' placeholder='Race' value='".$data['Race']."'>
-	<input type='text' name='Classe' id='Classe' placeholder='Classe' value='".$data['Classe']."'>
 	<input type='text' name='Capacite' id='Capacite' placeholder='Capacité' value='".$data['Capacité']."'>
 	<input type='text' name='Invocation' id='Invocation' placeholder='Invocation' value='".$data['Invocation']."'>
 	<input type='text' name='Origine' id='Origine' placeholder='Origine' value='".$data['Origine']."'>
 	<input type='number' name='Physique' id='Physique' placeholder='Physique' value='".$data['Physique']."'>
-	<input type='number' name='Capacités' id='Capacités' placeholder='Capacités' value='".$data['Capacités']."'>
+	<input type='number' name='Capacites' id='Capacites' placeholder='Capacités' value='".$data['Capacités']."'>
 	<input type='number' name='Mental' id='Mental' placeholder='Mental' value='".$data['Mental']."'>
 	<input type='number' name='Social' id='Social' placeholder='Social' value='".$data['Social']."'>
 	";
