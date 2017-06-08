@@ -26,10 +26,12 @@
 				<input type="text" name="Joueur" id="Joueur" placeholder="Joueur?" class="block" required>
 				<input type="submit" value="Afficher" class="block">
 			</form>
-			<a href="personnage.php">Créer</a>
+			<form action="creation.php" method="post">
+				<input type="hidden" name="Rate" value=''>
+				<input type="submit" value="Créer" class="block">
+			</form>
 		</div>
 
-		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

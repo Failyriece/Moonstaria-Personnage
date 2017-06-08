@@ -3,7 +3,6 @@
     src: url(../font/Birds.ttf);
 }
 body{
-	font-family: 'Gabriola', sans-serif;
 	margin: 0px;
 	padding: 0px;
 }
@@ -17,14 +16,38 @@ label{
 }
 input{
 	text-align: center;
-	font-family: 'Gabriola', sans-serif;
 	font-size: 25px;					
 	margin: 0 auto;
 	display: inline-block;
+}
+body,input,textarea{
+		font-family: 'Gabriola', sans-serif;
+}
+textarea{
+	resize: none;
+	font-size: 25px;
 }
 .block{
 	display: block;
 }
 #imageperso{
 	display: none;
+}
+.Menu{
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	border: 1px solid grey;
+	font-size: 25px;
+	color: black;
+	text-decoration: none;
+	background-color: #DFDFDF;
+	padding: 5px 15px;
+}
+.Menu:hover{
+	border-color: blue;
+	background-color: #e5f1fb;
+}
+#PersoImage{
+	font-size: 20px;
 }

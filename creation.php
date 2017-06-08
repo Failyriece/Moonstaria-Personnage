@@ -1,13 +1,22 @@
+<?php
+
+extract($_POST);
+
+if ($Rate == 'true') {
+	echo "<h1 style='color:red; text-align:center;'>Le nom $Joueur n'est pas disponible</h1>";
+}
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Personnage Moonstaria</title>
+		<title>Création Moonstaria</title>
 		<link rel="stylesheet" href="css/css.css">
 	</head>
 	<body>
-		<form action="ajouter.php" method="post" accept-charset="utf-8">
-			<input type="file" name="imageperso" value="" id="imageperso" onChange="getvalue();"/>
+		<form action="ajouter.php" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+			<input type="file" name="imageperso" value="" id="imageperso" onChange="getvalue();" accept=".jpg"/>
 			<input type="button" value="Choisir une image" onclick="getfile()" />
 			<label for="PersoImage" id="PersoImage">Aucun image choisie</label>
 			<select id="Ecaille" name="Ecaille">
@@ -31,10 +40,9 @@
 			<input type="number" name="Capacites" id="Capacites" placeholder="Capacités">
 			<input type="number" name="Mental" id="Mental" placeholder="Mental">
 			<input type="number" name="Social" id="Social" placeholder="Social">
-			<input type="submit" value="Enregistrer"">
+			<input type="submit" value="Enregistrer">
 		</form>
 			
-		<script src="js/jquery-3.1.1.min.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
