@@ -28,6 +28,7 @@ if ($data['Appelation'] == '') {
 		<meta charset="utf-8">
 		<title>Personnage Moonstaria</title>
 		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" href="css/verif.css">
 	</head>
 	<body>
 		<a href="index.php" class="Menu">Menu</a>

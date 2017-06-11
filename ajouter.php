@@ -2,6 +2,8 @@
 include 'connexion.php';
 extract($_POST);
 
+$passcache = sha1($password);
+
 $retour = 'index';
 
 // Verifie que le perso n'existe pas déjà
@@ -21,16 +23,18 @@ if ($retour == 'creation') {
 			</form>
 			<script>window.onload = function(){document.getElementById('clickauto').click();}</script>";
 }else{
-	$sql = "INSERT INTO personnage  SET Appelation = '$Appelation',MDP = '$password',Écaille = '$Ecaille',Race = '$Race', Classe = '$Classe', Capacité = '$Capacite', Invocation = '$Invocation', Origine = '$Origine', Physique = '$Physique', Capacités = '$Capacites', Mental = '$Mental', Social = '$Social'";
+	$sql = "INSERT INTO personnage  SET Appelation = '$Appelation',MDP = '$passcache',Écaille = '$Ecaille',Race = '$Race', Classe = '$Classe', Capacité = '$Capacite', Invocation = '$Invocation', Origine = '$Origine', Physique = '$Physique', Capacités = '$Capacites', Mental = '$Mental', Social = '$Social'";
 	mysqli_query($link,$sql);
 	if ($_FILES['imageperso']['name'] != '') {
 		$image = $_FILES['imageperso']['tmp_name'];
 		list($w_ori,$h_ori) = getimagesize($image);
 		$image2 = imagecreatefromjpeg($image);
-		$imagefinal = imagecreatetruecolor(400, 400);
-		imagecopyresampled($imagefinal, $image2, 0, 0, 0, 0, 400, 400, $w_ori, $h_ori);
+		$imagefinal = imagecreatetruecolor(250, 250);
+		imagecopyresampled($imagefinal, $image2, 0, 0, 0, 0, 250, 250, $w_ori, $h_ori);
 		imagejpeg($imagefinal, "img/Avatar/".$Appelation.".jpg");
 	}
+	$Joueur = $Appelation;
+	include 'image.php';
 	header('location: index.php');
 }
 

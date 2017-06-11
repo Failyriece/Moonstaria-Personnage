@@ -7,17 +7,19 @@ $verif2 = mysqli_query($link,$verif);
 $data = mysqli_fetch_assoc($verif2);
 $totauxCaract = $data['Physique'] + $data['Capacités'] + $data['Mental'] + $data['Social'];
 
-echo "<form action='modif.php' method='post' accept-charset='utf-8' enctype='multipart/form-data'>";
+echo "<form action='modif.php' method='post' accept-charset='utf-8' enctype='multipart/form-data' class='formulaire'>";
 
 if (!file_exists('img/Avatar/'.$Joueur.'.jpg')) {
 	echo "<input type='hidden' name='VerifImg' value='false'>
 	<input type='file' name='imageperso' value='' id='imageperso' onChange='getvalue();' accept='.jpg'/>
 			<input type='button' value='Choisir une image' onclick='getfile()'' />
-			<label for='PersoImage' id='PersoImage'>Aucun image choisie</label>";
+			<label for='PersoImage' id='PersoImage'>Aucun image choisie</label><span class='block margebottom'></span>";
 }else{
 	echo "<input type='hidden' name='VerifImg' value='true'>";
 }
 echo "<input type='hidden' name='Joueur' value='$Joueur'>
+	<input type='text' name='Groupe' id='Groupe' placeholder='Groupe' value='".$data['Groupe']."'>
+	<span class='block margetop'></span>
 	<select name='Ecaille' id='Ecaille'>
 		<option value='Noire'>Noire</option>
 		<option value='Violette'>Violette</option>
@@ -35,17 +37,19 @@ if ($data['Race'] == '' || $data['Capacité'] == '' || $data['Invocation'] == ''
 	<input type='text' name='Capacite' id='Capacite' placeholder='Capacité' value='".$data['Capacité']."'>
 	<input type='text' name='Invocation' id='Invocation' placeholder='Invocation' value='".$data['Invocation']."'>
 	<input type='text' name='Origine' id='Origine' placeholder='Origine' value='".$data['Origine']."'>
+	<span class='block margetop'></span>
 	<input type='number' name='Physique' id='Physique' placeholder='Physique' value='".$data['Physique']."'>
 	<input type='number' name='Capacites' id='Capacites' placeholder='Capacités' value='".$data['Capacités']."'>
 	<input type='number' name='Mental' id='Mental' placeholder='Mental' value='".$data['Mental']."'>
 	<input type='number' name='Social' id='Social' placeholder='Social' value='".$data['Social']."'>
 	";
 }else{echo "<input type='hidden' name='Fini' value='true'>";}
-echo "<textarea name='Compétences' id='Compétences' cols='15' rows='5' placeholder='Compétences'>".$data['Compétences']."</textarea>
+echo "<span class='block margetop'></span><textarea name='Compétences' id='Compétences' cols='15' rows='5' placeholder='Compétences'>".$data['Compétences']."</textarea>
 		<textarea name='Inventaire' id='Inventaire' cols='15' rows='5' placeholder='Inventaire'>".$data['Inventaire']."</textarea>
-		<input type='submit' value='Enregistrer'>
+		<input type='submit' value='Enregistrer' class='block'>
 	</form>";
-echo "<form action='supprime.php' method='post'>
+echo "<a href='index.php' class='Menu'>Menu</a>
+	<form action='supprime.php' method='post' class='supprimer'>
 	<input type='hidden' name='Joueur' value='$Joueur'>
 	<input type='submit' value='Supprimer le personnage'>
 </form>"
@@ -56,6 +60,7 @@ echo "<form action='supprime.php' method='post'>
 		<meta charset="utf-8">
 		<title>Modification Moonstaria</title>
 		<link rel="stylesheet" href="css/css.css">
+		<link rel="stylesheet" href="css/formulaire.css">
 	</head>
 	<body>
 		

@@ -1,0 +1,72 @@
+html{height: 100%;}
+body{
+	height: 100%;
+	width: 100%;
+	background-image: url(../img/backgroundIndex.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+input,select,textarea{
+	font-size: 25px;					
+	margin: 0 auto;
+	padding: 5px 10px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+input,textarea,select{
+	background-image: url(../img/boutonIndex.jpg);
+	background-position: center;
+	text-align: center;
+	color : #573900;
+}
+input[type='submit']{
+	margin-top: 30px;
+	border-color: #E7A854;
+	box-shadow: 0px 0px 20px #5B3C11;
+}
+input[type='text'],input[type='password'],input[type='number'],textarea,select,input[type='button']{border-color: #cc9b25;}
+label{
+	padding-top: 10%;
+	font-size: 50px;
+	margin-bottom: 50px;
+	color : #573900;
+}
+textarea{
+	resize: none;
+}
+.formulaire{padding-top: 10%;}
+.creation{padding-top: 14%;}
+.creation input[type='submit']{
+	margin-top: 75px;
+}
+.supprimer{
+	position: absolute;
+	bottom: 5%;
+	right: 4%;
+}
+.Menu{
+	position: absolute;
+	bottom: 5%;
+	left: 6%;
+	border: 2px solid;
+	border-right-color: #DDD;
+	border-top-color: #DDD;
+	border-bottom-color: #A77824;
+	border-left-color: #A77824;
+	font-size: 25px;
+	color : #573900;
+	text-decoration: none;
+	background-image: url(../img/boutonIndex.jpg);
+	background-position: center;
+	box-shadow: 0px 0px 20px #5B3C11;
+	padding: 5px 15px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
+.margetop{margin-top: 30px;}
+.margebottom{margin-bottom: 30px;}
+#PersoImage{font-size: 20px;}
+#imageperso{display: none;}

@@ -6,8 +6,9 @@ $MDP = $_POST['password'];
 $verif = "SELECT Appelation, MDP FROM `personnage` WHERE Appelation = '$Joueur'";
 $verif2 = mysqli_query($link,$verif);
 $data = mysqli_fetch_assoc($verif2);
+$passcache = sha1($password);
 
-if ($data['MDP'] == $_POST['password'] ||$_POST['password'] == 'admin'){
+if ($data['MDP'] == $passcache ||$_POST['password'] == 'admin'){
 	echo "<form action='modification.php' method='post'>
 				<input type='hidden' name='Joueur' value='$Joueur'>
 				<input type='submit' id='clickauto'>
