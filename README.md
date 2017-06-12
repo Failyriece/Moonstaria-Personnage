@@ -12,7 +12,6 @@ Site web permettant de créer et de modifier des personnages d'un univers de Jeu
 * Créer un personnage via un formulaire avec plusieurs points
 * Modifier un personnage par le même formulaire, si l'on possède le mot de passe de ce personnage
 * Rechercher un personnage ou un Groupe et afficher leurs fiches sous forme d'un livre
-* (Facultatif) Afficher une liste de personnage en fonction d'un ou plusieurs critères
 
 ## Tecnologies
 

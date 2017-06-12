@@ -54,45 +54,45 @@ imagecopyresampled(	$PageBlanche,
 // Fond / Taille / Angle / X / Y / Couleur / Police / Message
 $taille = 25;
 //	----------------------------- Appelation -------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Appelation']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Appelation']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,410,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Appelation']);
+imagettftext($PageBlanche,$taille,0,$aide,410,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Appelation']);
 //	-------------------------------- Race -----------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Race']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Race']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,450,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Race']);
+imagettftext($PageBlanche,$taille,0,$aide,450,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Race']);
 //	-------------------------------- Classe -----------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Classe']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Classe']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,490,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Classe']);
+imagettftext($PageBlanche,$taille,0,$aide,490,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Classe']);
 
 //	-------------------------------- Capacité -----------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Capacité']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Capacité']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,530,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Capacité']);
+imagettftext($PageBlanche,$taille,0,$aide,530,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Capacité']);
 //	-------------------------------- Invocation -----------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Invocation']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Invocation']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,570,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Invocation']);
+imagettftext($PageBlanche,$taille,0,$aide,570,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Invocation']);
 //	-------------------------------- Origine -----------------------------------------
-$bbox = imagettfbbox($taille, 0, 'font/Gabriola.ttf', $data['Origine']);
+$bbox = imagettfbbox($taille, 0, 'font/Angel.otf', $data['Origine']);
 $aide = 250-(($bbox[2]-$bbox[0])/2);
-imagettftext($PageBlanche,$taille,0,$aide,610,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',$data['Origine']);
+imagettftext($PageBlanche,$taille,0,$aide,610,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',$data['Origine']);
 
 //	-------------------------------- Caractéristiques -----------------------------------------
-imagettftext($PageBlanche,30,0,50,710,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',"Physique : ".$data['Physique']);
-imagettftext($PageBlanche,30,0,50,760,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',"Mental : ".$data['Mental']);
-$bbox = imagettfbbox(30, 0, 'font/Gabriola.ttf', "Social : ".$data['Social']);
+imagettftext($PageBlanche,30,0,50,710,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',"Physique : ".$data['Physique']);
+imagettftext($PageBlanche,30,0,50,760,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',"Mental : ".$data['Mental']);
+$bbox = imagettfbbox(30, 0, 'font/Angel.otf', "Social : ".$data['Social']);
 $aide = 450-$bbox[2];
-imagettftext($PageBlanche,30,0,$aide,710,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',"Social : ".$data['Social']);
-$bbox = imagettfbbox(30, 0, 'font/Gabriola.ttf', "Capacités : ".$data['Capacités']);
+imagettftext($PageBlanche,30,0,$aide,710,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',"Social : ".$data['Social']);
+$bbox = imagettfbbox(30, 0, 'font/Angel.otf', "Capacités : ".$data['Capacités']);
 $aide = 450-$bbox[2];
-imagettftext($PageBlanche,30,0,$aide,760,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Gabriola.ttf',"Capacités : ".$data['Capacités']);
+imagettftext($PageBlanche,30,0,$aide,760,imagecolorallocate($PageBlanche, 0, 0, 0),'font/Angel.otf',"Capacités : ".$data['Capacités']);
 
 
 //	-------------------------------- Compétences -----------------------------------------
-imagettftext($PageBlanche2,30,0,50,50,imagecolorallocate($PageBlanche2, 0, 0, 0),'font/Gabriola.ttf',$data['Compétences']);
-imagettftext($PageBlanche2,30,0,50,550,imagecolorallocate($PageBlanche2, 0, 0, 0),'font/Gabriola.ttf',$data['Inventaire']);
+imagettftext($PageBlanche2,30,0,50,50,imagecolorallocate($PageBlanche2, 0, 0, 0),'font/Angel.otf',$data['Compétences']);
+imagettftext($PageBlanche2,30,0,50,550,imagecolorallocate($PageBlanche2, 0, 0, 0),'font/Angel.otf',$data['Inventaire']);
 
 imagepng($PageBlanche, "img/Fiche/$Joueur.png");
 imagepng($PageBlanche2, "img/Fiche/".$Joueur."2.png");
