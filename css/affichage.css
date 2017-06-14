@@ -53,5 +53,14 @@ body{
 .regroupe{
 	position: absolute;
 	top: 50px;
-	left: 25%;
+	left: 400px;
+}
+
+div img{
+	width: 500px;
+}
+.livre{
+	position: absolute;
+	left: 233px;
+	top: 17px;
 }

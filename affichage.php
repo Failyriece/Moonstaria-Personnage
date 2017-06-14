@@ -20,11 +20,12 @@ if ($Affiche == 'Joueur') {
 	if ($data['Appelation'] == '') {
 		echo "<p class='Nope'>Ce personnage n'existe pas</p><a href='index.php' class='Menu'>Menu</a>";
 	}else{
-		echo "<div id='flipbook' class='regroupe'>
-			<div><img src='img/Face.jpg'></div>
+		echo "<img src='img/Livre.png' class='livre'>
+		<div id='flipbook' class='regroupe'>
+			<div><img src='img/Presentation.png'></div>
 			<div><img src='img/Fiche/$Joueur.png'></div>
 			<div><img src='img/Fiche/".$Joueur."2.png'></div>
-			<div><img src='img/Face2.jpg'></div>
+			<div><img src='img/FinPres.png'></div>
 		</div>
 		<a href='index.php' class='Menu2'>Menu</a>";
 	}
@@ -35,15 +36,16 @@ if ($Affiche == 'Joueur') {
 	if ($data['Groupe'] == '') {
 		echo "<p class='Nope'>Ce groupe n'existe pas</p><a href='index.php' class='Menu'>Menu</a>";
 	}else{
-		echo "<div id='flipbook' class='regroupe'>
-		<div><img src='img/Face.jpg'></div>
-		<div><img src='img/Fiche/".$data['Appelation'].".png'></div>
-		<div><img src='img/Fiche/".$data['Appelation']."2.png'></div>";
+		echo "<img src='img/Livre.png' class='livre'>
+		<div id='flipbook' class='regroupe'>
+			<div><img src='img/Presentation.png'></div>
+			<div><img src='img/Fiche/".$data['Appelation'].".png'></div>
+			<div><img src='img/Fiche/".$data['Appelation']."2.png'></div>";
 		while ($data = mysqli_fetch_assoc($verif2)) {
 			echo "<div><img src='img/Fiche/".$data['Appelation'].".png'></div>
 				<div><img src='img/Fiche/".$data['Appelation']."2.png'></div>";
 		}
-		echo "<div><img src='img/Face.jpg'></div></div>
+		echo "<div><img src='img/FinPres.png'></div></div>
 		<a href='index.php' class='Menu2'>Menu</a>";	
 	}
 }
